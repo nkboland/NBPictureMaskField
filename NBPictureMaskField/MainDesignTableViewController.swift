@@ -25,7 +25,7 @@ class MainDesignTableViewController: UITableViewController, UITextFieldDelegate 
 
     // Configure table to automatically resize its rows in conjunction with tableView(_:heightForRowAtIndexPath:indexPath)
     tableView.estimatedRowHeight = 68.0
-    tableView.rowHeight = UITableViewAutomaticDimension
+    tableView.rowHeight = UITableView.automaticDimension
 
     // Dismiss keyboard when tapping outside text field
     let tap = UITapGestureRecognizer(target: self, action: #selector(MainDesignTableViewController.dismissKeyboard))
@@ -51,7 +51,7 @@ class MainDesignTableViewController: UITableViewController, UITextFieldDelegate 
 
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
   //----------------------------------------------------------------------------
-    return UITableViewAutomaticDimension
+    return UITableView.automaticDimension
   }
 
   func loadDefaults(_ sender: AnyObject) {
@@ -139,7 +139,7 @@ class MainDesignTableViewController: UITableViewController, UITextFieldDelegate 
     saveDefaults(sender)
   }
 
-  func dismissKeyboard() {
+  @objc func dismissKeyboard() {
   //----------------------------------------------------------------------------
     view.endEditing(true)
   }

@@ -156,7 +156,7 @@ extension NBPictureMaskField: UITextFieldDelegate {
     let start = textField.position(from: beginning, offset:range.location)
     //let end = textField.positionFromPosition(start!, offset:range.length)
     //let textRange = textField.textRangeFromPosition(start!, toPosition:end!)
-    var cursorOffset = textField.offset(from: beginning, to:start!) + string.characters.count
+    var cursorOffset = textField.offset(from: beginning, to:start!) + string.count
 
     let checkResult = nbPictureMask.check(textField.text ?? "", shouldChangeCharactersInRange: range, replacementString: string)
 

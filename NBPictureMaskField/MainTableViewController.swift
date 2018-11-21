@@ -56,7 +56,7 @@ class MainTableViewController: UITableViewController {
     // Dispose of any resources that can be recreated.
   }
 
-  func dismissKeyboard() {
+  @objc func dismissKeyboard() {
   //----------------------------------------------------------------------------
     view.endEditing(true)
   }

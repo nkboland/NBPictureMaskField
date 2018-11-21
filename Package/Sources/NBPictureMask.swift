@@ -294,7 +294,7 @@ class NBPictureMask {
   func setMask(_ mask: String) -> MaskResult {
   //----------------------------------------------------------------------------
     rootNode = Node()
-    self.mask = Array(mask.characters)
+    self.mask = Array(mask)
     return parseMask(&rootNode )
   }
 
@@ -443,7 +443,7 @@ class NBPictureMask {
 
       } while NBPictureMask.isDigit(c)
 
-      n.str = String(n.str.characters.dropLast())
+      n.str = String(n.str.dropLast())
 
       let retVal = parseMask(i, node: &n)
       i = retVal.index
@@ -929,8 +929,8 @@ class NBPictureMask {
   // NOTE - autoFill cannot be done here because it is not known whether
   //        the new text was being inserted, deleted, or appended.
 
-    self.text = Array(text.characters)
-    self.newtext = Array(text.characters)
+    self.text = Array(text)
+    self.newtext = Array(text)
 
     var fillFlag = self.autoFill
     let rslt = check(0, node: rootNode, fillFlag: &fillFlag)
@@ -955,19 +955,19 @@ class NBPictureMask {
     let isAppending: Bool
 
     // Appending
-    if range.location >= text.characters.count {
+    if range.location >= text.count {
       isAppending = true
     // Inserting
     } else if range.length == 0 {
       isAppending = false
     // Replacing
-    } else if range.length == string.characters.count {
+    } else if range.length == string.count {
       isAppending = false
     // Replace and reduce
-    } else if range.length > string.characters.count {
+    } else if range.length > string.count {
       isAppending = false
     // Replace and increase
-    } else if range.length < string.characters.count {
+    } else if range.length < string.count {
       isAppending = false
     // Somthing else
     } else {
@@ -985,7 +985,7 @@ class NBPictureMask {
     // Autofill needs to figure out how many characters were added to the end
 
     if isAppending {
-      let autoFillOffset = (checkResult.text.characters.count - text.characters.count) - string.characters.count
+      let autoFillOffset = (checkResult.text.count - text.count) - string.count
       checkResult.autoFillOffset = autoFillOffset
     }
 
