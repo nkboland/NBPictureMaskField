@@ -2,10 +2,10 @@
 //  NBPictureMaskTestAutoFill.swift
 //  NBPictureMaskField
 //
+//  GitHub: https://github.com/nkboland/NBPictureMaskField
+//
 //  Created by Nick Boland on 4/10/16.
 //  Copyright © 2016 Nick Boland. All rights reserved.
-//
-//  GitHub: https://github.com/nkboland/NBPictureMaskField
 //
 //  OVERVIEW
 //  --------
@@ -17,6 +17,10 @@ import XCTest
 
 class NBPictureMaskTestAutoFill: XCTestCase {
 //------------------------------------------------------------------------------
+
+  static var allTests = [
+    ("test_basic", test_basic),
+  ]
 
   override func setUp() {
   //----------------------------------------------------------------------------

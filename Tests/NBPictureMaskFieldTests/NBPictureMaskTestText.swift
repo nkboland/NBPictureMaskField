@@ -2,10 +2,10 @@
 //  NBPictureMaskTestText.swift
 //  NBPictureMaskField
 //
+//  GitHub: https://github.com/nkboland/NBPictureMaskField
+//
 //  Created by Nick Boland on 4/8/16.
 //  Copyright © 2016 Nick Boland. All rights reserved.
-//
-//  GitHub: https://github.com/nkboland/NBPictureMaskField
 //
 //  OVERVIEW
 //  --------
@@ -19,6 +19,18 @@ import XCTest
 
 class NBPictureMaskTestText: XCTestCase {
 //------------------------------------------------------------------------------
+
+  static var allTests = [
+    ("test_basic", test_basic),
+    ("test_literal", test_literal),
+    ("test_simple", test_simple),
+    ("test_repetition", test_repetition),
+    ("test_grouping", test_grouping),
+    ("test_grouping_group", test_grouping_group),
+    ("test_grouping_optional", test_grouping_optional),
+    ("test_optional_nested", test_optional_nested),
+    ("test_space_fill", test_space_fill),
+  ]
 
   override func setUp() {
   //----------------------------------------------------------------------------

@@ -1,6 +1,7 @@
 //==============================================================================
 //  NBPictureMaskTestStatus.swift
 //  NBPictureMaskField
+//
 //  GitHub: https://github.com/nkboland/NBPictureMaskField
 //
 //  Created by Nick Boland on 3/27/16.
@@ -16,6 +17,34 @@ import XCTest
 
 class NBPictureMaskTestStatus: XCTestCase {
 //------------------------------------------------------------------------------
+
+  static var allTests = [
+    ("test_mask_errors", test_mask_errors),
+    ("test_basic", test_basic),
+    ("test_literal", test_literal),
+    ("test_simple", test_simple),
+    ("test_grouping", test_grouping),
+    ("test_grouping_group", test_grouping_group),
+    ("test_grouping_special", test_grouping_special),
+    ("test_grouping_optional", test_grouping_optional),
+    ("test_repetition", test_repetition),
+    ("test_optional", test_optional),
+    ("test_optional_nested", test_optional_nested),
+    ("test_common", test_common),
+    ("test_examples_unsigned_int", test_examples_unsigned_int),
+    ("test_examples_us_dates", test_examples_us_dates),
+    ("test_examples_timestamp", test_examples_timestamp),
+    ("test_examples_number_three_digits_or_less", test_examples_number_three_digits_or_less),
+    ("test_examples_first_letter_capitalized", test_examples_first_letter_capitalized),
+    ("test_examples_zip_optional_4", test_examples_zip_optional_4),
+    ("test_examples_capitalized_words", test_examples_capitalized_words),
+    ("test_examples_international_test", test_examples_international_test),
+    ("test_examples_us_phone_number", test_examples_us_phone_number),
+    ("test_examples_color_list_with_automatic_fill", test_examples_color_list_with_automatic_fill),
+    ("test_examples_yes_no", test_examples_yes_no),
+    ("test_examples_floating_point", test_examples_floating_point),
+    ("test_examples_icd_9_or_10", test_examples_icd_9_or_10),
+  ]
 
   override func setUp() {
   //----------------------------------------------------------------------------
@@ -551,7 +580,7 @@ class NBPictureMaskTestStatus: XCTestCase {
     retVal = pictureMask.check("12-123A");  XCTAssert(retVal.status == .notOk)
   }
 
-  func test_examples_unisgned_int() {
+  func test_examples_unsigned_int() {
   //----------------------------------------------------------------------------
   // Unsigned integer
 
@@ -614,7 +643,7 @@ class NBPictureMaskTestStatus: XCTestCase {
     retVal = pictureMask.check("01:11:11 XM, 01/01/01");  XCTAssert(retVal.status == .notOk)
   }
 
-  func test_examples_nmber_three_digits_or_less() {
+  func test_examples_number_three_digits_or_less() {
   //----------------------------------------------------------------------------
   // Timestamp
 
@@ -686,7 +715,7 @@ class NBPictureMaskTestStatus: XCTestCase {
     retVal = pictureMask.check("Hi. How Are You? (Ok)");  XCTAssert(retVal.status == .notOk)
   }
 
-  func test_examples_International_test() {
+  func test_examples_international_test() {
   //----------------------------------------------------------------------------
   // International test
 
@@ -850,4 +879,5 @@ class NBPictureMaskTestStatus: XCTestCase {
     retVal = pictureMask.check("1234");     XCTAssert(retVal.status == .notOk)
     retVal = pictureMask.check("A1B.A1B2"); XCTAssert(retVal.status == .ok)
   }
+
 }

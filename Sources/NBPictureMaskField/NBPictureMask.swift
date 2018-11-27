@@ -1,6 +1,7 @@
 //==============================================================================
 //  NBPictureMask.swift
 //  NBPictureMaskField
+//
 //  GitHub: https://github.com/nkboland/NBPictureMaskField
 //
 //  Created by Nick Boland on 3/27/16.
