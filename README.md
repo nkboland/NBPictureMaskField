@@ -33,7 +33,7 @@ Create a dependency in your Package:
 
     .package(url: https://github.com/nkboland/NBPictureMaskField.git", from: "1.0.0"),
 
-#### Application Example
+## Application Example
 
 An example of how this might be used in an application can be found here:
 https://github.com/nkboland/NBPictureMaskFieldApplication
