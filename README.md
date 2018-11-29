@@ -9,6 +9,10 @@ It also can create a template of how they should look and must match.
 If the data entered does not match then it can be ignored with `enforceMask`.
 An option to `autofill` constant characters is also available to speed data entry.
 
+<a href="https://github.com/nkboland/NBPictureMaskField">
+<img src="https://github.com/nkboland/blobs/blob/master/nbpicturemaskfield/gifs/screen1.gif" height="300" /></a>
+<br><br/>
+
 ## Installation
 
 The component may be added to your project a few different ways.
