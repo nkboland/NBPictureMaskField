@@ -13,6 +13,10 @@ An option to `autofill` constant characters is also available to speed data entr
 <img src="https://github.com/nkboland/blobs/blob/master/nbpicturemaskfield/gifs/screen1.gif" height="300" /></a>
 <br><br/>
 
+<a href="https://github.com/nkboland/NBPictureMaskField">
+<img src="https://github.com/nkboland/blobs/blob/master/nbpicturemaskfield/gifs/screen2.gif" height="300" /></a>
+<br><br/>
+
 ## Installation
 
 The component may be added to your project a few different ways.
@@ -126,7 +130,7 @@ For example:
 #### Other Examples
 
     [(###)]###-####   Phone number with optional area code
-    Yes, No           Has two possible values: "Yes", or "No"
+    Yes,No            Has two possible values: "Yes", or "No"
     &*@               First letters is converted to uppercase as desired
     ;&##              An ampersand followed by two digits
     {+,-}*#[.]*#      Start with either + or -, followed by a number of digits, with optionally a dot somewhere
