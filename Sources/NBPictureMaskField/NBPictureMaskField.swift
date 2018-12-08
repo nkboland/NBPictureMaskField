@@ -182,8 +182,10 @@ extension NBPictureMaskField: UITextFieldDelegate {
 
   func textFieldShouldClear(_ textField: UITextField) -> Bool {
   //----------------------------------------------------------------------------
-  // The clear button option on the text field does not trigger
-  // anything except this.
+  // The clear button option on the text field does not trigger anthing
+  // except this. Since it triggers before the clearing takes place it
+  // is best to do it at this time.
+    self.text = ""
     changed?(self, "", .ok)
     return true
   }
