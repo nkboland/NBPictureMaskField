@@ -155,8 +155,6 @@ extension NBPictureMaskField: UITextFieldDelegate {
     // Save positions
     let beginning = textField.beginningOfDocument
     let start = textField.position(from: beginning, offset:range.location)
-    //let end = textField.positionFromPosition(start!, offset:range.length)
-    //let textRange = textField.textRangeFromPosition(start!, toPosition:end!)
     var cursorOffset = textField.offset(from: beginning, to:start!) + string.count
 
     let checkResult = nbPictureMask.check(textField.text ?? "", shouldChangeCharactersInRange: range, replacementString: string)
@@ -180,6 +178,14 @@ extension NBPictureMaskField: UITextFieldDelegate {
 
     changed?(self, checkResult.text, checkResult.status)
     return false
+  }
+
+  func textFieldShouldClear(_ textField: UITextField) -> Bool {
+  //----------------------------------------------------------------------------
+  // The clear button option on the text field does not trigger
+  // anything except this.
+    changed?(self, "", .ok)
+    return true
   }
 
   func textFieldDidEndEditing(_ textField: UITextField) {
