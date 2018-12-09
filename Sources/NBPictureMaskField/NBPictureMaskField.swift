@@ -28,6 +28,7 @@
 //  Class Functions:
 //
 //    check()
+//    isEmptyOrOk()
 //
 //  Closures:
 //
@@ -123,9 +124,24 @@ class NBPictureMaskField: UITextField {
     }
   }
 
-  func check(_ text: String) -> NBPictureMask.CheckResult {
+  func check(_ text: String? = nil) -> NBPictureMask.CheckResult {
   //----------------------------------------------------------------------------
+  // Check given text against the picture mask.
+  // If no parameter is given then check against the current field text.
+
+    let text = ( text ?? ( self.text ?? "" ) )
     return nbPictureMask.check(text)
+  }
+
+  func isEmptyOrOk(_ text: String? = nil) -> Bool {
+  //----------------------------------------------------------------------------
+  // Return true if string is empty or ok when checked against the picture mask.
+  // If no parameter is given then check against the current field text.
+
+    let text = ( text ?? ( self.text ?? "" ) )
+    if text == "" { return true }
+    if check(text).status == .ok { return true }
+    return false
   }
 
 }
