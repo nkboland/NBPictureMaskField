@@ -54,16 +54,21 @@ class NBPictureMaskField: UITextField {
   var validate: ValidateClosure?
   var changed: ChangedClosure?
 
-  fileprivate var nbPictureMask : NBPictureMask!
-  internal var isEditingText: Bool
-  fileprivate var _enforceMask: Bool
+  fileprivate var nbPictureMask : NBPictureMask!    // Provides necessary algorithms
+  fileprivate var _enforceMask: Bool                // Control attribute
+
+  internal var isEditingText: Bool                  // Helper when setting text value programmatically
 
   required init?(coder aDecoder: NSCoder) {
   //----------------------------------------------------------------------------
+
     nbPictureMask = NBPictureMask()
     _enforceMask = true
     isEditingText = false
+
     super.init(coder: aDecoder)
+
+    delegate = self
   }
 
   //--------------------
@@ -121,19 +126,6 @@ class NBPictureMaskField: UITextField {
   func check(_ text: String) -> NBPictureMask.CheckResult {
   //----------------------------------------------------------------------------
     return nbPictureMask.check(text)
-  }
-
-  //--------------------
-  // MARK: - Draw
-
-  override func draw(_ rect: CGRect) {
-  //----------------------------------------------------------------------------
-  // This is used as a way to get an observer on "text".
-
-    super.draw(rect)
-
-    // This observer used on manual updating text property
-    delegate = self
   }
 
 }
